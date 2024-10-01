@@ -10,13 +10,16 @@ public class ButtonPushOpenDoor : MonoBehaviour
 
     private void Start()
     {
+        
         GetComponent<XRSimpleInteractable>().selectEntered.AddListener
                                                         (x => ToggleDoorOpen());
     }
 
     public void ToggleDoorOpen()
     {
+        Debug.Log("ToggleDoorOpen called");
         bool isOpen = animator.GetBool(boolName);
         animator.SetBool(boolName, !isOpen);
+        Debug.Log("Door is now " + (!isOpen ? "open" : "closed"));
     }
 }
