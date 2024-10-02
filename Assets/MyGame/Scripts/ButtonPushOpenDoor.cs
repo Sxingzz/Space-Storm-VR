@@ -12,7 +12,7 @@ public class ButtonPushOpenDoor : MonoBehaviour
     {
         
         GetComponent<XRSimpleInteractable>().selectEntered.AddListener
-                                                        (x => ToggleDoorOpen());
+                                                          (x => ToggleDoorOpen());
     }
 
     public void ToggleDoorOpen()

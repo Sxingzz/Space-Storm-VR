@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Breakable : MonoBehaviour
 {
     public List<GameObject> breakablePieces;
     public float timeBreak = 2;
     private float timer = 0;
+    public UnityEvent OnBreakEvent;
 
     private void Start()
     {
@@ -27,6 +29,8 @@ public class Breakable : MonoBehaviour
                 piece.SetActive(true);
                 piece.transform.parent = null;
             }
+
+            OnBreakEvent.Invoke();
 
             gameObject.SetActive(false);
         }
