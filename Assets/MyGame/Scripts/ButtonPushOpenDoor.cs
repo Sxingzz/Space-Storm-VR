@@ -21,5 +21,7 @@ public class ButtonPushOpenDoor : MonoBehaviour
         bool isOpen = animator.GetBool(boolName);
         animator.SetBool(boolName, !isOpen);
         Debug.Log("Door is now " + (!isOpen ? "open" : "closed"));
+
+        AudioManager.instance.Play("Door");
     }
 }
